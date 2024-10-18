@@ -43,3 +43,35 @@ console.log(`${isPalindrome(userText) ? "La parola è palindroma." : "La parola 
 
 
 //Es.2 L’utente sceglie pari o dispari e inserisce un numero da 1 a 5. Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). Sommiamo i due numeri Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) Dichiariamo chi ha vinto.
+
+function generateRandInt5(){
+    const randInt=Math.floor(Math.random()*(5-1)+1);
+    return(randInt);
+}
+
+function isOddOrEven(num){
+    console.log(`Somma: ${num}`);
+    if(num%2===0){
+        return("isEven");
+    }else{
+        return("isOdd");
+    }
+}
+
+const userChoiceValue = prompt("Scegli se pari o dispari: ");
+const userValue = parseInt(prompt("Inserisci un numero da 1 a 5: "));
+
+const computerRandInt = generateRandInt5();
+
+const sum = userValue + computerRandInt;
+
+const oddOrEven = isOddOrEven(sum); 
+
+if(userChoiceValue==="pari"){
+    console.log(oddOrEven==="isEven" ? "Hai vinto!" : "Hai perso!");
+}else if(userChoiceValue==="dispari"){
+    console.log(oddOrEven==="isEven" ? "Hai perso!" : "Hai vinto!");
+}
+
+
+
