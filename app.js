@@ -51,15 +51,18 @@ function generateRandInt5(){
 
 function isOddOrEven(num){
     console.log(`Somma: ${num}`);
-    if(num%2===0){
-        return("isEven");
-    }else{
-        return("isOdd");
-    }
+    return(num%2===0 ? "isEven" : "isOdd")
 }
 
-const userChoiceValue = prompt("Scegli se pari o dispari: ");
-const userValue = parseInt(prompt("Inserisci un numero da 1 a 5: "));
+let userChoiceValue = "";
+do{
+    userChoiceValue = prompt("Scegli se pari o dispari: ")
+}while(userChoiceValue!="pari" && userChoiceValue!="dispari");
+
+let userValue = -1;
+do{
+    userValue = parseInt(prompt("Inserisci un numero da 1 a 5: "));
+}while (userValue>5 || userValue<1) //servirebbe anche un controllo sul tipo di dato inserito (string, number, bool...)
 
 const computerRandInt = generateRandInt5();
 
